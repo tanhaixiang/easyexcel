@@ -5,11 +5,13 @@ package com.alibaba.excel.util;
  */
 public class PositionUtils {
 
+    private PositionUtils() {}
+
     public static int getRow(String currentCellIndex) {
         int row = 0;
         if (currentCellIndex != null) {
             String rowStr = currentCellIndex.replaceAll("[A-Z]", "").replaceAll("[a-z]", "");
-            row = Integer.parseInt(rowStr)-1;
+            row = Integer.parseInt(rowStr) - 1;
         }
         return row;
     }
@@ -23,6 +25,6 @@ public class PositionUtils {
                 col += (currentIndex[i] - '@') * Math.pow(26, (currentIndex.length - i - 1));
             }
         }
-        return col-1;
+        return col - 1;
     }
 }
